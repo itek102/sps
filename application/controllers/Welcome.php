@@ -24,6 +24,8 @@ class Welcome extends CI_Controller {
         $data['beton'] = $a->result_array();
         $b = $this->db->get('specteh');
         $data['teh'] = $b->result_array();
+        $c = $this->db->get('menu');
+        $data['menu'] = $c->result_array();
 		$this->load->view('welcome_message',$data);
 	}
 }

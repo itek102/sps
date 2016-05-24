@@ -34,17 +34,9 @@
                          
                          <div class="collapse navbar-collapse" id="responsive-menu">
                              <ul class="nav navbar-nav">
-                                 <!--<li class="dropdown">
-                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Наши услуги<b class="caret"></b></a>
-                                     <ul class="dropdown-menu">
-                                         <li><a href="#">Продажа бетона</a></li>
-                                         <li><a href="#">Аренда спецтехники</a></li>
-                                     </ul>
-                                 </li>-->
-                                 <li><a href="#pb">Продажа бетона</a></li>
-                                 <li><a href="#st">Аренда спецтехники</a></li>
-                                 <li><a href="#cont">Контакты</a></li>
-                                 <li><a href="#write">Написать нам</a></li>
+                                 <? foreach($menu as $item): ?>
+                                 <li><a href="#<?=$item['block']?>"><?=$item['title']?></a></li>
+                                 <? endforeach; ?>
                              </ul>
                          </div>
                      </div>
