@@ -26,6 +26,9 @@ class Welcome extends CI_Controller {
         $data['teh'] = $b->result_array();
         $c = $this->db->get('menu');
         $data['menu'] = $c->result_array();
+        $d = $this->db->get('gallery');
+        $data['gallery_num'] = $d->num_rows();
+        $data['gallery'] = $d->result_array();
 		$this->load->view('welcome_message',$data);
 	}
 }

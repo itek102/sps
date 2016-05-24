@@ -44,23 +44,20 @@
                  
                  <div id="carousel" class="carousel slide">
                      <ol class="carousel-indicators">
-                         <li class="active" data-target="#carousel" data-slide-to="0"></li>
-                         <li data-target="#carousel" data-slide-to="1"></li>
-                         <li data-target="#carousel" data-slide-to="2"></li>
+                        <?
+                         for($i=0; $i<$gallery_num; $i++){
+                            echo '<li class="gallery-indicator" data-target="#carousel" data-slide-to="'.$i.'"></li>';
+                         }?>
+
                      </ol>
                      <div class="carousel-inner">
-                         <div class="item active">
-                             <img src="<?=base_url();?>images/1.jpg" alt="">
-                             <div class="carousel-caption"><h3>Гарантия качества</h3></div>
+                        <?foreach($gallery as $item):?>
+                         <div class="item gallery-img">
+                             <img src="<?=base_url();?>images/<?=$item['img']?>" alt="">
+                             <div class="carousel-caption"><h3><?=$item['description']?></h3></div>
                          </div>
-                         <div class="item">
-                             <img src="<?=base_url();?>images/2.jpg" alt="">
-                             <div class="carousel-caption"><h3>Низкие цены</h3></div>
-                         </div>
-                         <div class="item">
-                             <img src="<?=base_url();?>images/3.jpg" alt="">
-                             <div class="carousel-caption"><h3>Быстрая доставка</h3></div>
-                         </div>
+                         <?endforeach;?>
+                         
                      </div>
                      <a href="#carousel" class="left carousel-control" data-slide="prev">
                          <span class="glyphicon glyphicon-chevron-left"></span>
@@ -190,6 +187,12 @@
 });
 
     </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+    $('.gallery-img').eq(0).addClass('active');
+    $('.gallery-indicator').eq(0).addClass('active');
+});  
+</script>
 <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
