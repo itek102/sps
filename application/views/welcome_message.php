@@ -126,9 +126,9 @@
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=kPg0_q2m0LJS1gFGM87gufr8Au5jVm4y&width=100%&height=500&lang=ru_RU&sourceType=constructor&scroll=true"></script>
 </div>
          <div class="col-lg-3 col-md-3 col-sm-3">
-             <p class="conatact-item"><img class='cont-img' src="<?=base_url();?>images/maps.png"> Шарлыкское шоссе 1/6, оф. 406</p>
-             <p class="conatact-item"><img class='cont-img' src="<?=base_url();?>images/14222063051894.png" alt=""> 29-24-78</p>
-             <p class="conatact-item"><img class='cont-img' src="<?=base_url();?>images/mail_ru.png" alt=""> info@beton.ru</p>
+             <p class="conatact-item"><img class='cont-img' src="<?=base_url();?>images/maps.png"><?=$adress;?></p>
+             <p class="conatact-item"><img class='cont-img' src="<?=base_url();?>images/14222063051894.png" alt=""><?=$phone;?></p>
+             <p class="conatact-item"><img class='cont-img' src="<?=base_url();?>images/mail_ru.png" alt=""><?=$email;?></p>
          </div>
          </div>
      

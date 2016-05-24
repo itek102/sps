@@ -29,6 +29,18 @@ class Welcome extends CI_Controller {
         $d = $this->db->get('gallery');
         $data['gallery_num'] = $d->num_rows();
         $data['gallery'] = $d->result_array();
+        $this->db->where('name','adress');
+        $e = $this->db->get('base_setting');
+        $e = $e->row_array();
+        $data['adress'] = $e['value'];
+        $this->db->where('name','phone');
+        $e = $this->db->get('base_setting');
+        $e = $e->row_array();
+        $data['phone'] = $e['value'];
+        $this->db->where('name','email');
+        $e = $this->db->get('base_setting');
+        $e = $e->row_array();
+        $data['email'] = $e['value'];
 		$this->load->view('welcome_message',$data);
 	}
 }
