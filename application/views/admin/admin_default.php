@@ -19,17 +19,13 @@
         <label for="inputMail" class="col-sm-2 control-label">Почта</label>
         <div class="col-sm-10">
           <input name="email" type="text" class="form-control" id="inputMail" placeholder="Почта" value="<?=$email?>">
-          <span class="help-block">На эту почту будут отправлться заявки.</span>
+          <span class="help-block">На эту почту будут отправляться заявки.</span>
         </div>
       </div>
       <input id="save-default" type="submit" name="save_default" class="btn pull-right <?=$btn_color?>" value="<?=$msg?>">
       
     </form>
-    <script>
-        setTimeout(function() {
-            $('#save-default').val('Сохранить изменения').removeClass('btn-success').addClass('btn-primary');
-        },3000);
-    </script>
+
     </div>
     </div>
     </div>
