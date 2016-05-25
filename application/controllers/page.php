@@ -75,6 +75,15 @@ $this->load->view('admin/admin_bottom');
         $this->load->view('admin/admin_default',$data);
         $this->load->view('admin/admin_bottom');
 }
+    
+    
+    public function gallery() {
+        $d = $this->db->get('gallery');
+        $data['gallery'] = $d->result_array();
+        $this->load->view('admin/admin_top');
+        $this->load->view('admin/admin_gallery',$data);
+        $this->load->view('admin/admin_bottom');
+    }
 
 
 	
