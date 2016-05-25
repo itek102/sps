@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 24 2016 г., 14:01
+-- Время создания: Май 25 2016 г., 13:58
 -- Версия сервера: 5.6.26
 -- Версия PHP: 5.6.12
 
@@ -143,6 +143,27 @@ INSERT INTO `specteh` (`id`, `title`, `description`, `img`) VALUES
 (8, 'Автобетоносмеситель 5КАМАЗ5511 (5 куб.)', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas id, quis voluptates a esse officiis quibusdam rerum sed quisquam, cum minus in itaque labore maxime quae iusto, assumenda nam explicabo.', 'ETz6Umm4.jpg'),
 (9, 'BAW FENIX', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas id, quis voluptates a esse officiis quibusdam rerum sed quisquam, cum minus in itaque labore maxime quae iusto, assumenda nam explicabo.', 'baw_fenix_1044.jpeg'),
 (10, 'Каток XGMA модель XG6121', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas id, quis voluptates a esse officiis quibusdam rerum sed quisquam, cum minus in itaque labore maxime quae iusto, assumenda nam explicabo.', 'katok.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `login` varchar(255) NOT NULL,
+  `passwd` varchar(255) NOT NULL,
+  `full_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `login`, `passwd`, `full_name`) VALUES
+(1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'Паршин Игорь');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
