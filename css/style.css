@@ -73,3 +73,7 @@ div#footer {
     background: #1FA4E4;
     color: #fff;
 }
+
+div#main-content {
+    margin-top: 50px;
+}
