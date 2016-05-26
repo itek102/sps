@@ -78,13 +78,62 @@ $this->load->view('admin/admin_bottom');
     
     
     public function gallery() {
+        if ($this->input->post('load_file'))
+        {
+            $description = $this->input->post('slogan');
+            $config['upload_path'] = './images/';
+            $config['allowed_types'] = 'jpg|png';
+            $config['max_size'] = '15360';
+            $config['encrypt_name'] = TRUE;
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            $temp_files = $_FILES;
+            $count = count ($_FILES['file']['name']);
+            for ($i=0; $i<=$count-1; $i++)
+                {
+                    $_FILES['file'] = array (
+                    'name'=>$temp_files['file']['name'][$i],
+                    'type'=>$temp_files['file']['type'][$i],
+                    'tmp_name'=>$temp_files['file']['tmp_name'][$i],
+                    'error'=>$temp_files['file']['error'][$i],
+                    'size'=>$temp_files['file']['size'][$i]);
+                    $this->upload->do_upload('file');
+                    $tmp_data = $this->upload->data();
+                    $files_data[$i]['data'] = $tmp_data['file_name'];
+                    $img = array(
+                        'img'         =>   $files_data[$i]['data'], 
+                        'description'        =>   $description,
+                        );
+                    $this->db->insert('gallery',$img);
+            }
+        } 
         $d = $this->db->get('gallery');
         $data['gallery'] = $d->result_array();
         $this->load->view('admin/admin_top');
         $this->load->view('admin/admin_gallery',$data);
-        $this->load->view('admin/admin_bottom');
+        $this->load->view('admin/admin_bottom'); 
+        
+    }
+    
+    public function del_img() {
+    $id = $this->input->post('id');
+    $this->db->where('id',$id);
+    $a = $this->db->delete('gallery');
+}
+    public function save_img() {
+        $id = $this->input->post('id');
+        $description = $this->input->post('description');
+        $img['description'] = $description;
+        $this->db->where('id',$id);
+        $this->db->update('gallery',$img);
     }
 
-
+    public function beton()
+	{
+        $this->login();
+        $this->load->view('admin/admin_top');
+        $this->load->view('admin/admin_beton',$data);
+        $this->load->view('admin/admin_bottom');
+}
 	
 }
