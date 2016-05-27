@@ -200,13 +200,89 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Заявка</h4>
       </div>
+    <form action="" class="form-horizontal" role="form" method="post">
       <div class="modal-body">
-        ...
+            
+             <div class="form-group">
+        <label for="inputAdress" class="col-sm-2 control-label">Контактные данные</label>
+        <div class="col-sm-10">
+          <input name="adress" type="text" class="form-control" id="inputAdress" value="" placeholder="Контактные данные">
+           <span class="help-block">Например: 89123456789, ivanov@mail.com</span>
+        </div>
+      </div>  
+              
+       <div class="form-group">
+        <label for="inputPhone" class="col-sm-2 control-label">Вид продукции</label>
+        <div class="col-sm-10">
+          <select class="form-control">
+  <option>Бетон</option>
+  <option>Раствор</option>
+  <option>Керамзитобетон</option>
+</select>
+        </div>
       </div>
+         
+          
+ <div class="form-group">
+        <label for="inputMarka" class="col-sm-2 control-label">Марка/класс/пластичность</label>
+        <div class="col-sm-10">
+          <input name="phone" type="text" class="form-control" id="inputMarka" placeholder="Марка/класс/пластичность" value="">
+          <span class="help-block">Например: М250/В20/П3</span>
+        </div>
+      </div>
+          
+          
+      <div class="form-group">
+        <label for="inputMail" class="col-sm-2 control-label">Количество м<sup>3</sup></label>
+        <div class="col-sm-10">
+          <input name="email" type="text" class="form-control" id="inputMail" placeholder="Количество" value="">
+        </div>
+      </div>
+      
+      
+      <div class="form-group">
+        <label for="inputDost" class="col-sm-2 control-label">Доставка</label>
+        <div class="col-sm-10">
+          <select class="form-control">
+  <option>Сомавывоз</option>
+  <option>СПС</option>
+</select>
+        </div>
+      </div>
+     
+      <div class="form-group">
+        <label for="inputMail" class="col-sm-2 control-label">Дата и время поставки</label>
+        <div class="col-sm-10">
+          <input name="email" type="datetime-local" class="form-control" id="inputMail" placeholder="Доставка" value="">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputMarka" class="col-sm-2 control-label">Адрес доставки</label>
+        <div class="col-sm-10">
+          <input name="phone" type="text" class="form-control" id="inputMarka" placeholder="Адрес доставки" value="">
+          <span class="help-block">Например: г. Оренбург, Шарлыкское шоссе, 1/6</span>
+        </div>
+      </div>
+       <div class="form-group">
+        <label for="inputMarka" class="col-sm-2 control-label">Ответственный за приемку</label>
+        <div class="col-sm-10">
+          <input name="phone" type="text" class="form-control" id="inputMarka" placeholder="Ответственный за приемку" value="">
+          <span class="help-block">Например: Иванов Иван Иванович</span>
+        </div>
+      </div>
+       <div class="form-group">
+        <label for="inputMarka" class="col-sm-2 control-label">Телефон ответственного</label>
+        <div class="col-sm-10">
+          <input name="phone" type="text" class="form-control" id="inputMarka" placeholder="Ответственный за приемку" value="">
+          <span class="help-block">Например: 89123456789</span>
+        </div>
+      </div>
+        </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
-        <button type="button" id='sent-form' class="btn btn-success">Отправить</button>
+        <input type="submit" id='sent-form' value="Отправить" class="btn btn-success">
       </div>
+</form>
     </div>
   </div>
 </div>
