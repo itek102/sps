@@ -244,7 +244,7 @@
         <label for="inputDost" class="col-sm-2 control-label">Доставка</label>
         <div class="col-sm-10">
           <select class="form-control">
-  <option>Сомавывоз</option>
+  <option>Самовывоз</option>
   <option>СПС</option>
 </select>
         </div>

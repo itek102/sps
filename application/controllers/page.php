@@ -128,12 +128,39 @@ $this->load->view('admin/admin_bottom');
         $this->db->update('gallery',$img);
     }
 
-    public function beton()
-	{
+    public function beton() {
+        if ($this->input->post('load_file'))
+        {
+            $description = $this->input->post('description');
+            $title = $this->input->post('title');
+            $img = array(
+                'title'         =>   $title, 
+                'description'   =>   $description,
+            );
+            $this->db->insert('beton',$img);
+        }
         $this->login();
+        $d = $this->db->get('beton');
+        $data['gallery'] = $d->result_array();
         $this->load->view('admin/admin_top');
         $this->load->view('admin/admin_beton',$data);
         $this->load->view('admin/admin_bottom');
+    }
+    
+    public function del_beton() {
+    $id = $this->input->post('id');
+    $this->db->where('id',$id);
+    $a = $this->db->delete('beton');
 }
+    public function save_beton() {
+        $id = $this->input->post('id');
+        $title = $this->input->post('title');
+        $description = $this->input->post('description');
+        $img['description'] = $description;
+        $img['title'] = $title;
+        $this->db->where('id',$id);
+        $a = $this->db->update('beton',$img);
+        echo $a;
+    }
 	
 }
