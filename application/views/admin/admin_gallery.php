@@ -2,8 +2,8 @@
     <h1>Страница настроек галлереи</h1>
     <div class="alert alert-info"><p>Для лучшего отображения используйте изображения размером 1920х500 пикселей.</p></div>
     <form role="form" class="bg-info">
-  <div class="form-group">
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Слоган изображения">
+  <div class="form-group col-lg-5">
+    <input type="text" class="form-control " id="exampleInputPassword1" placeholder="Слоган изображения">
   </div>
   <div class="form-group">
     <input type="file" id="exampleInputFile">
