@@ -206,7 +206,7 @@
              <div class="form-group">
         <label for="inputAdress" class="col-sm-2 control-label">Контактные данные</label>
         <div class="col-sm-10">
-          <input name="adress" type="text" class="form-control" id="inputAdress" value="" placeholder="Контактные данные">
+          <input name="adress" type="text" class="form-control" id="inputContact" value="" placeholder="Контактные данные">
            <span class="help-block">Например: 89123456789, ivanov@mail.com</span>
         </div>
       </div>  
@@ -214,10 +214,10 @@
        <div class="form-group">
         <label for="inputPhone" class="col-sm-2 control-label">Вид продукции</label>
         <div class="col-sm-10">
-          <select class="form-control">
-  <option>Бетон</option>
-  <option>Раствор</option>
-  <option>Керамзитобетон</option>
+          <select id="inputVid" class="form-control">
+  <option value="Бетон">Бетон</option>
+  <option value="Раствор">Раствор</option>
+  <option value="Керамзитобетон">Керамзитобетон</option>
 </select>
         </div>
       </div>
@@ -226,7 +226,7 @@
  <div class="form-group">
         <label for="inputMarka" class="col-sm-2 control-label">Марка/класс/пластичность</label>
         <div class="col-sm-10">
-          <input name="phone" type="text" class="form-control" id="inputMarka" placeholder="Марка/класс/пластичность" value="">
+          <input  type="text" class="form-control" id="inputMarka" placeholder="Марка/класс/пластичность" value="">
           <span class="help-block">Например: М250/В20/П3</span>
         </div>
       </div>
@@ -235,7 +235,7 @@
       <div class="form-group">
         <label for="inputMail" class="col-sm-2 control-label">Количество м<sup>3</sup></label>
         <div class="col-sm-10">
-          <input name="email" type="text" class="form-control" id="inputMail" placeholder="Количество" value="">
+          <input name="email" type="text" class="form-control" id="inputCol" placeholder="Количество" value="">
         </div>
       </div>
       
@@ -243,9 +243,9 @@
       <div class="form-group">
         <label for="inputDost" class="col-sm-2 control-label">Доставка</label>
         <div class="col-sm-10">
-          <select class="form-control">
-  <option>Самовывоз</option>
-  <option>СПС</option>
+          <select id="inputDost" class="form-control">
+  <option value='Самовывоз'>Самовывоз</option>
+  <option value='СПС'>СПС</option>
 </select>
         </div>
       </div>
@@ -253,27 +253,27 @@
       <div class="form-group">
         <label for="inputMail" class="col-sm-2 control-label">Дата и время поставки</label>
         <div class="col-sm-10">
-          <input name="email" type="datetime-local" class="form-control" id="inputMail" placeholder="Доставка" value="">
+          <input name="email" type="datetime-local" class="form-control" id="inputDate" placeholder="Доставка" value="">
         </div>
       </div>
       <div class="form-group">
         <label for="inputMarka" class="col-sm-2 control-label">Адрес доставки</label>
         <div class="col-sm-10">
-          <input name="phone" type="text" class="form-control" id="inputMarka" placeholder="Адрес доставки" value="">
+          <input name="phone" type="text" class="form-control" id="inputAdress" placeholder="Адрес доставки" value="">
           <span class="help-block">Например: г. Оренбург, Шарлыкское шоссе, 1/6</span>
         </div>
       </div>
        <div class="form-group">
         <label for="inputMarka" class="col-sm-2 control-label">Ответственный за приемку</label>
         <div class="col-sm-10">
-          <input name="phone" type="text" class="form-control" id="inputMarka" placeholder="Ответственный за приемку" value="">
+          <input name="phone" type="text" class="form-control" id="inputOtvet" placeholder="Ответственный за приемку" value="">
           <span class="help-block">Например: Иванов Иван Иванович</span>
         </div>
       </div>
        <div class="form-group">
         <label for="inputMarka" class="col-sm-2 control-label">Телефон ответственного</label>
         <div class="col-sm-10">
-          <input name="phone" type="text" class="form-control" id="inputMarka" placeholder="Ответственный за приемку" value="">
+          <input name="phone" type="text" class="form-control" id="inputTelOtvet" placeholder="Ответственный за приемку" value="">
           <span class="help-block">Например: 89123456789</span>
         </div>
       </div>
