@@ -20,6 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+
         $a = $this->db->get('beton');
         $data['beton'] = $a->result_array();
         $b = $this->db->get('specteh');
@@ -43,4 +44,26 @@ class Welcome extends CI_Controller {
         $data['email'] = $e['value'];
 		$this->load->view('welcome_message',$data);
 	}
+    
+    public function send_mail() {
+                    $this->load->library('email');
+$this->input->post('Contact');
+$this->input->post('Vid');
+$this->input->post('Marka');
+$this->input->post('Col');
+$this->input->post('Dost');
+$this->input->post('Date');
+$this->input->post('Adress');
+$this->input->post('Otvet');
+$this->input->post('TelOtvet');
+$this->email->from('info@sps.ru', 'Система заявок');
+$this->email->to('admin@admin'); 
+
+
+$this->email->subject('Новая заявка');
+$this->email->message($this->input->post('Contact').'\r'.$this->input->post('Vid').'\r');	
+
+$this->email->send();
+
+    }
 }

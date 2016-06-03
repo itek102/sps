@@ -191,6 +191,25 @@
         $(document).ready(function(){
     $('.gallery-img').eq(0).addClass('active');
     $('.gallery-indicator').eq(0).addClass('active');
+            $('#sent-form').click(function(){
+                var html = $.ajax({
+      type: "POST",
+      url: "welcome/send_mail",
+      data: ({
+           'Contact' : $('#inputContact').val(),
+           'Vid' : $('#inputVid').val(),
+           'Marka' : $('#inputMarka').val(),
+           'Col' : $('#inputCol').val(),
+           'Dost' : $('#inputDost').val(),
+           'Date' : $('#inputDate').val(),
+           'Adress' : $('#inputAdress').val(),
+           'Otvet' : $('#inputOtvet').val(),
+           'TelOtvet' : $('#inputTelOtvet').val(),
+        }),
+            dataType: "json",
+            async: false,
+        }).responseText;
+            })
 });  
 </script>
 <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -200,21 +219,21 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Заявка</h4>
       </div>
-    <form action="" class="form-horizontal" role="form" method="post">
+    <div class="form-horizontal">
       <div class="modal-body">
             
              <div class="form-group">
-        <label for="inputAdress" class="col-sm-2 control-label">Контактные данные</label>
+        <label for="inputContact" class="col-sm-2 control-label">Контактные данные</label>
         <div class="col-sm-10">
-          <input name="adress" type="text" class="form-control" id="inputContact" value="" placeholder="Контактные данные">
+          <input name="inputContact" type="text" class="form-control" id="inputContact" value="" placeholder="Контактные данные">
            <span class="help-block">Например: 89123456789, ivanov@mail.com</span>
         </div>
       </div>  
               
        <div class="form-group">
-        <label for="inputPhone" class="col-sm-2 control-label">Вид продукции</label>
+        <label for="inputVid" class="col-sm-2 control-label">Вид продукции</label>
         <div class="col-sm-10">
-          <select id="inputVid" class="form-control">
+          <select name="inputVid" id="inputVid" class="form-control">
   <option value="Бетон">Бетон</option>
   <option value="Раствор">Раствор</option>
   <option value="Керамзитобетон">Керамзитобетон</option>
@@ -226,16 +245,16 @@
  <div class="form-group">
         <label for="inputMarka" class="col-sm-2 control-label">Марка/класс/пластичность</label>
         <div class="col-sm-10">
-          <input  type="text" class="form-control" id="inputMarka" placeholder="Марка/класс/пластичность" value="">
+          <input  type="text" class="form-control" name="inputMarka" id="inputMarka" placeholder="Марка/класс/пластичность" value="">
           <span class="help-block">Например: М250/В20/П3</span>
         </div>
       </div>
           
           
       <div class="form-group">
-        <label for="inputMail" class="col-sm-2 control-label">Количество м<sup>3</sup></label>
+        <label for="inputCol" class="col-sm-2 control-label">Количество м<sup>3</sup></label>
         <div class="col-sm-10">
-          <input name="email" type="text" class="form-control" id="inputCol" placeholder="Количество" value="">
+          <input name="inputCol" type="text" class="form-control" id="inputCol" placeholder="Количество" value="">
         </div>
       </div>
       
@@ -243,7 +262,7 @@
       <div class="form-group">
         <label for="inputDost" class="col-sm-2 control-label">Доставка</label>
         <div class="col-sm-10">
-          <select id="inputDost" class="form-control">
+          <select name="inputDost" id="inputDost" class="form-control">
   <option value='Самовывоз'>Самовывоз</option>
   <option value='СПС'>СПС</option>
 </select>
@@ -251,38 +270,38 @@
       </div>
      
       <div class="form-group">
-        <label for="inputMail" class="col-sm-2 control-label">Дата и время поставки</label>
+        <label for="inputDate" class="col-sm-2 control-label">Дата и время поставки</label>
         <div class="col-sm-10">
-          <input name="email" type="datetime-local" class="form-control" id="inputDate" placeholder="Доставка" value="">
+          <input name="inputDate" type="datetime-local" class="form-control" id="inputDate" placeholder="Доставка" value="">
         </div>
       </div>
       <div class="form-group">
-        <label for="inputMarka" class="col-sm-2 control-label">Адрес доставки</label>
+        <label for="inputAdress" class="col-sm-2 control-label">Адрес доставки</label>
         <div class="col-sm-10">
-          <input name="phone" type="text" class="form-control" id="inputAdress" placeholder="Адрес доставки" value="">
+          <input name="inputAdress" type="text" class="form-control" id="inputAdress" placeholder="Адрес доставки" value="">
           <span class="help-block">Например: г. Оренбург, Шарлыкское шоссе, 1/6</span>
         </div>
       </div>
        <div class="form-group">
-        <label for="inputMarka" class="col-sm-2 control-label">Ответственный за приемку</label>
+        <label for="inputOtvet" class="col-sm-2 control-label">Ответственный за приемку</label>
         <div class="col-sm-10">
-          <input name="phone" type="text" class="form-control" id="inputOtvet" placeholder="Ответственный за приемку" value="">
+          <input name="inputOtvet" type="text" class="form-control" id="inputOtvet" placeholder="Ответственный за приемку" value="">
           <span class="help-block">Например: Иванов Иван Иванович</span>
         </div>
       </div>
        <div class="form-group">
         <label for="inputMarka" class="col-sm-2 control-label">Телефон ответственного</label>
         <div class="col-sm-10">
-          <input name="phone" type="text" class="form-control" id="inputTelOtvet" placeholder="Ответственный за приемку" value="">
+          <input name="inputTelOtvet" type="text" class="form-control" id="inputTelOtvet" placeholder="Ответственный за приемку" value="">
           <span class="help-block">Например: 89123456789</span>
         </div>
       </div>
         </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
-        <input type="submit" id='sent-form' value="Отправить" class="btn btn-success">
+        <input type="submit" name="send_application" id='sent-form' value="Отправить" class="btn btn-success">
       </div>
-</form>
+</div>
     </div>
   </div>
 </div>
