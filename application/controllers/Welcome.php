@@ -25,6 +25,7 @@ class Welcome extends CI_Controller {
         $data['beton'] = $a->result_array();
         $b = $this->db->get('specteh');
         $data['teh'] = $b->result_array();
+        $this->db->order_by('position','ASC');
         $c = $this->db->get('menu');
         $data['menu'] = $c->result_array();
         $d = $this->db->get('gallery');

@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 25 2016 г., 13:58
--- Версия сервера: 5.6.26
--- Версия PHP: 5.6.12
+-- Время создания: Июн 05 2016 г., 22:31
+-- Версия сервера: 5.6.26-log
+-- Версия PHP: 5.5.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -102,18 +102,34 @@ CREATE TABLE IF NOT EXISTS `menu` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Номер',
   `title` varchar(255) NOT NULL COMMENT 'Название',
   `block` varchar(255) NOT NULL COMMENT 'Блок',
+  `position` int(2) NOT NULL COMMENT 'Позиция',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Дамп данных таблицы `menu`
 --
 
-INSERT INTO `menu` (`id`, `title`, `block`) VALUES
-(1, 'Продажа бетона', 'pb'),
-(2, 'Аренда спецтехники', 'st'),
-(3, 'Контакты', 'cont'),
-(4, 'Написать нам', 'write');
+INSERT INTO `menu` (`id`, `title`, `block`, `position`) VALUES
+(1, 'Продажа бетона', 'pb', 1),
+(2, 'Аренда спецтехники', 'st', 3),
+(3, 'Контакты', 'cont', 4),
+(4, 'Написать нам', 'write', 5),
+(5, 'Кольца', 'ring', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `rings`
+--
+
+CREATE TABLE IF NOT EXISTS `rings` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `text` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
