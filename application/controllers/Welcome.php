@@ -20,6 +20,12 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+         $data['user'] = $this->session->userdata('user');
+        if (empty($data['user'])) {
+          $data['login_panel'] ='';  
+        } else {
+        $data['login_panel'] = '<li><a href="page" class="btn btn-success">Войти в панель</a></li>';
+            }
 
         $a = $this->db->get('beton');
         $data['beton'] = $a->result_array();
@@ -43,7 +49,11 @@ class Welcome extends CI_Controller {
         $e = $this->db->get('base_setting');
         $e = $e->row_array();
         $data['email'] = $e['value'];
+        $f = $this->db->get('rings');
+        $data['ring'] = $f->result_array();
 		$this->load->view('welcome_message',$data);
+       
+        
 	}
     
     public function send_mail() {

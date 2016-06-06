@@ -24,8 +24,6 @@
                          <div class="navbar-header">
                             <a href="#" class="navbar-brand hidden-sm"><img src="images/logo.png" id="logo" alt=""> СПС - ГРУППА КОМПАНИЙ</a>
                              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
-                                
-                                 <span class="sr-only">Открыть навигацию</span>
                                  <span class="icon-bar"></span>
                                  <span class="icon-bar"></span>
                                  <span class="icon-bar"></span>
@@ -37,6 +35,7 @@
                                  <? foreach($menu as $item): ?>
                                  <li><a href="#<?=$item['block']?>"><?=$item['title']?></a></li>
                                  <? endforeach; ?>
+                                 <?=$login_panel?>
                              </ul>
                          </div>
                      </div>
@@ -94,19 +93,18 @@
      <div class="row">
          <div class="col-lg-12 col-md-12 col-sm-12">
              <h1 id='ring'>Кольца</h1>
-             <p>Предсатвляем вашему внимаю спецтехнику, которая доступна для аренды.</p>
          </div>
      </div>
  </div>
     <div class="container">
     	<div class="row masonry" data-columns>
-    	<? foreach ($teh as $item):?>
+    	<? foreach ($ring as $item):?>
 			<div class="item">
 				<div class="thumbnail">
 					<img src="<?=base_url();?>images/<?=$item['img']?>" alt="" class="img-responsive">
 					<div class="caption">
 						<h3><a href="#"><?=$item['title']?></a></h3>
-						<p><?=$item['description']?></p>
+						<p><?=$item['text']?></p>
 						<a href="#" class="btn btn-success">Заказать</a>
 					</div>
 				</div>
@@ -331,5 +329,6 @@
     </div>
   </div>
 </div>
+<!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37769280 = new Ya.Metrika({ id:37769280, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/37769280" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
 </body>
 </html>

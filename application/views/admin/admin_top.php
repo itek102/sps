@@ -36,6 +36,7 @@
                          
                          <div class="collapse navbar-collapse" id="responsive-menu">
                              <ul class="nav navbar-nav">
+                                 <li><a href="<?=base_url();?>">На сайт</a></li>                           
                                  <li><a href="<?=base_url();?>page/default_setting">Общая информация</a></li>                           
                                  <li><a href="<?=base_url();?>page/gallery">Слайдер</a></li>                           
                                  <li><a href="<?=base_url();?>page/beton">Бетон</a></li>                           
