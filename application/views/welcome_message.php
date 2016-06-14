@@ -10,6 +10,9 @@
     <link href="<?=base_url();?>css/bootstrap.css" rel="stylesheet">
     <link href="<?=base_url();?>css/font-awesome.css" rel="stylesheet">
     <link href="<?=base_url();?>css/style.css" rel="stylesheet">
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa:300,300&subset=cyrillic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=cyrillic' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -69,7 +72,6 @@
      <div class="row">
          <div class="col-lg-12 col-md-12 col-sm-12">
              <h1 id='pb'>Продажа бетона</h1>
-             <p>Мы осуществаляем поставки бетона в любую точку города аболюдно бесплатно. Весь представленный ассортимент присутствует на нашем складе.</p>
          </div>
      </div>
  </div>
@@ -118,7 +120,6 @@
      <div class="row">
          <div class="col-lg-12 col-md-12 col-sm-12">
              <h1 id='st'>Аренда спецтехники</h1>
-             <p>Предсатвляем вашему внимаю спецтехнику, которая доступна для аренды.</p>
          </div>
      </div>
  </div>

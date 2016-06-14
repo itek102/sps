@@ -81,3 +81,27 @@ div#main-content {
 div#ring-wrap {
     background: #f5f5f5;
 }
+
+h1#pb {
+    font-family: 'Comfortaa', cursive;
+}
+
+h1#ring {
+    font-family: 'Comfortaa', cursive;
+}
+
+h1#st {
+    font-family: 'Comfortaa', cursive;
+}
+
+h1#cont {
+    font-family: 'Comfortaa', cursive;
+}
+
+h1#write {
+    font-family: 'Comfortaa', cursive;
+}
+
+.caption p {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
