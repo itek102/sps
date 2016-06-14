@@ -68,6 +68,7 @@
                         <span class="glyphicon glyphicon-chevron-right"></span>
                      </a>
                  </div>
+                 <div class="container-fluid" id="beton-wrap">
  <div class="container">
      <div class="row">
          <div class="col-lg-12 col-md-12 col-sm-12">
@@ -89,6 +90,7 @@
 			</div>
 			<? endforeach;?>
     	</div>
+    </div>
     </div>
         <div class="container-fluid" id="ring-wrap">
      <div class="container">
@@ -179,7 +181,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <textarea class="form-control" rows="5"></textarea><br>
-                <button type="button" class="btn btn-primary btn-lg">Отправить</button>     
+                <button type="button" class="btn btn-success btn-lg">Отправить</button>     
             </div>
         </div>
     </div>

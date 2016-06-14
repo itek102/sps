@@ -62,15 +62,16 @@ p.conatact-item {
 }
 
 div#cont-form {
-    background: #6D6C6C;
+    background: #2c3e50;
+    color: #fff;
 }
 
 div#st-wrap {
-    background: #Ddd;
+    background: #7f8c8d;
 }
 
 div#footer {
-    background: #1FA4E4;
+    background: #3490db;
     color: #fff;
 }
 
@@ -103,5 +104,9 @@ h1#write {
 }
 
 .caption p {
-    font-family: 'Open Sans Condensed', sans-serif;
+    /* font-family: 'Open Sans Condensed', sans-serif; */
+}
+
+div#beton-wrap {
+    background: #7f8c8d;
 }
