@@ -64,15 +64,21 @@ p.conatact-item {
 div#cont-form {
     background: #2c3e50;
     color: #fff;
+    /* background-image: url(../images/blur-cont.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 15px;
 }
 
 div#st-wrap {
-    background: #7f8c8d;
+    background: #ecf0f1;
+    padding-bottom: 15px;
 }
 
 div#footer {
     background: #3490db;
     color: #fff;
+    padding-bottom: 0;
 }
 
 div#main-content {
@@ -80,27 +86,38 @@ div#main-content {
 }
 
 div#ring-wrap {
-    background: #f5f5f5;
+    background: #bdc3c7;
+    padding-bottom: 15px;
 }
 
 h1#pb {
-    font-family: 'Comfortaa', cursive;
+    /* font-family: 'Comfortaa', cursive; */
+    font-family: 'Jura', sans-serif;
 }
 
 h1#ring {
-    font-family: 'Comfortaa', cursive;
+    /* font-family: 'Comfortaa', cursive; */
+    /* background-color: white; */
+    font-family: 'Jura', sans-serif;
 }
+
+h1#ring {}
 
 h1#st {
-    font-family: 'Comfortaa', cursive;
+    /* font-family: 'Comfortaa', cursive; */
+    font-family: 'Jura', sans-serif;
 }
 
+h1#st {}
+
 h1#cont {
-    font-family: 'Comfortaa', cursive;
+    /* font-family: 'Comfortaa', cursive; */
+    font-family: 'Jura', sans-serif;
 }
 
 h1#write {
-    font-family: 'Comfortaa', cursive;
+    /* font-family: 'Comfortaa', cursive; */
+    font-family: 'Jura', sans-serif;
 }
 
 .caption p {
@@ -108,5 +125,21 @@ h1#write {
 }
 
 div#beton-wrap {
-    background: #7f8c8d;
+    background: #ecf0f1;
+    padding-bottom: 15px;
+}
+
+h3.beton-title {
+    color: #2980b9;
+    font-family: 'Arimo', sans-serif;
+}
+
+p.footer-copy {
+    line-height: 45px;
+    margin-bottom: 0;
+}
+
+div#cont-wrap {
+    padding-bottom: 15px;
+    background: #bdc3c7;
 }

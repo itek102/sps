@@ -13,6 +13,8 @@
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Comfortaa:300,300&subset=cyrillic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=cyrillic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo&subset=cyrillic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Jura&subset=cyrillic' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -80,13 +82,12 @@
     	<div class="row masonry" data-columns>
     	<? foreach ($beton as $item):?>
 			<div class="item">
-				<div class="thumbnail">
 					<div class="caption">
-						<h3><a href="#"><?=$item['title']?></a></h3>
+						<h3 class='beton-title'><?=$item['title']?></h3>
 						<p><?=$item['description']?></p>
 						<a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal">Заказать</a>
 					</div>
-				</div>
+				
 			</div>
 			<? endforeach;?>
     	</div>
@@ -142,6 +143,7 @@
     	</div>
     </div>
     </div>
+    <div class="container-fluid" id="cont-wrap">
     <div class="container">
            <div class="row">
          <div class="col-lg-12 col-md-12 col-sm-12">
@@ -149,16 +151,17 @@
         </div>
         </div>
         <div class="row">
-        <div class="col-lg-9 col-md-9 col sm-9">
+        <div class="col-lg-8 col-md-6 col sm-6">
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=kPg0_q2m0LJS1gFGM87gufr8Au5jVm4y&width=100%&height=500&lang=ru_RU&sourceType=constructor&scroll=true"></script>
 </div>
-         <div class="col-lg-3 col-md-3 col-sm-3">
+         <div class="col-lg-4 col-md-6 col-sm-6">
              <p class="conatact-item"><img class='cont-img' src="<?=base_url();?>images/maps.png"><?=$adress;?></p>
              <p class="conatact-item"><img class='cont-img' src="<?=base_url();?>images/14222063051894.png" alt=""><?=$phone;?></p>
              <p class="conatact-item"><img class='cont-img' src="<?=base_url();?>images/mail_ru.png" alt=""><?=$email;?></p>
          </div>
          </div>
      
+    </div>
     </div>
     <div class="container-fluid" id="cont-form">
     <div class="container">
@@ -188,7 +191,9 @@
     </div>
     <div class="container-fluid" id="footer">
         <div class="container" >
+        <p class="footer-copy">
         &copy; Все права защищены.
+        </p>
         </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
