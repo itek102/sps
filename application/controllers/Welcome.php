@@ -51,6 +51,18 @@ class Welcome extends CI_Controller {
         $data['email'] = $e['value'];
         $f = $this->db->get('rings');
         $data['ring'] = $f->result_array();
+        $this->db->where('section','beton');
+        $sb= $this->db->get('shares');
+        $sb = $sb->row_array();
+        $data['sb'] = $sb['text'];
+        $this->db->where('section','rings');
+        $sr= $this->db->get('shares');
+        $sr = $sr->row_array();
+        $data['sr'] = $sr['text'];
+        $this->db->where('section','specteh');
+        $ss= $this->db->get('shares');
+        $ss = $ss->row_array();
+        $data['ss'] = $ss['text'];
 		$this->load->view('welcome_message',$data);
        
         

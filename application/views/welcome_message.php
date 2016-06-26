@@ -46,7 +46,7 @@
                      </div>
                  </div>
                  
-                 <div id="carousel" class="carousel slide">
+                 <div id="carousel" class="carousel slide" data-ride="carousel">
                      <ol class="carousel-indicators">
                         <?
                          for($i=0; $i<$gallery_num; $i++){
@@ -80,6 +80,13 @@
  </div>
     <div class="container">
     	<div class="row masonry" data-columns>
+    	<div class="item">
+					<div class="caption">
+						<h3 class='beton-title'>Акции</h3>
+						<p><?=$sb?></p>
+					</div>
+				
+			</div>
     	<? foreach ($beton as $item):?>
 			<div class="item">
 					<div class="caption">
@@ -103,6 +110,15 @@
  </div>
     <div class="container">
     	<div class="row masonry" data-columns>
+    	    	<div class="item">
+					<div class="thumbnail">
+					<div class="caption">
+						<h3 class='beton-title'>Акции</h3>
+						<p><?=$sr; ?></p>
+					</div>
+                    </div>
+				
+			</div>
     	<? foreach ($ring as $item):?>
 			<div class="item">
 				<div class="thumbnail">
@@ -110,7 +126,7 @@
 					<div class="caption">
 						<h3><a href="#"><?=$item['title']?></a></h3>
 						<p><?=$item['text']?></p>
-						<a href="#" class="btn btn-success">Заказать</a>
+						<a href="#" class="btn btn-success order-btn" data-toggle="modal" data-title='<?=$item['title']?>' data-target="#myModal2">Заказать</a>
 					</div>
 				</div>
 			</div>
@@ -128,6 +144,14 @@
  </div>
     <div class="container">
     	<div class="row masonry" data-columns>
+    	    	<div class="item">
+    	    	<div class="thumbnail">
+					<div class="caption">
+						<h3 class='beton-title'>Акции</h3>
+						<p><?=$ss?></p>
+					</div>
+                    </div>
+			</div>
     	<? foreach ($teh as $item):?>
 			<div class="item">
 				<div class="thumbnail">
@@ -135,7 +159,7 @@
 					<div class="caption">
 						<h3><a href="#"><?=$item['title']?></a></h3>
 						<p><?=$item['description']?></p>
-						<a href="#" class="btn btn-success">Заказать</a>
+						<a href="#" class="btn btn-success order-btn" data-toggle="modal" data-title='<?=$item['title']?>' data-target="#myModal2">Заказать</a>
 					</div>
 				</div>
 			</div>
@@ -241,9 +265,14 @@
             dataType: "json",
             async: false,
         }).responseText;
-            })
+            });
+                    $('.order-btn').click(function() {
+                              $('#type-order').text('').text($(this).data('title'));
+                              })
 });  
 </script>
+
+<!-- Заявка на бетон -->
 <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -337,6 +366,67 @@
     </div>
   </div>
 </div>
+
+<!-- Заявка на кольца и технику -->
+
+<div class="modal fade bs-example-modal-lg" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Заявка на заказ: <span id="type-order"></span></h4>
+      </div>
+    <div class="form-horizontal">
+      <div class="modal-body">
+            
+             <div class="form-group">
+        <label for="inputContact" class="col-sm-2 control-label">Контактные данные</label>
+        <div class="col-sm-10">
+          <input name="inputContact" type="text" class="form-control" id="inputContact" value="" placeholder="Контактные данные">
+           <span class="help-block">Например: 89123456789, ivanov@mail.com</span>
+        </div>
+      </div>        
+      
+     
+      <div class="form-group">
+        <label for="inputDate" class="col-sm-2 control-label">Дата и время поставки</label>
+        <div class="col-sm-10">
+          <input name="inputDate" type="datetime-local" class="form-control" id="inputDate" placeholder="Доставка" value="">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAdress" class="col-sm-2 control-label">Адрес доставки</label>
+        <div class="col-sm-10">
+          <input name="inputAdress" type="text" class="form-control" id="inputAdress" placeholder="Адрес доставки" value="">
+          <span class="help-block">Например: г. Оренбург, Шарлыкское шоссе, 1/6</span>
+        </div>
+      </div>
+       <div class="form-group">
+        <label for="inputOtvet" class="col-sm-2 control-label">Ответственный за приемку</label>
+        <div class="col-sm-10">
+          <input name="inputOtvet" type="text" class="form-control" id="inputOtvet" placeholder="Ответственный за приемку" value="">
+          <span class="help-block">Например: Иванов Иван Иванович</span>
+        </div>
+      </div>
+       <div class="form-group">
+        <label for="inputMarka" class="col-sm-2 control-label">Телефон ответственного</label>
+        <div class="col-sm-10">
+          <input name="inputTelOtvet" type="text" class="form-control" id="inputTelOtvet" placeholder="Ответственный за приемку" value="">
+          <span class="help-block">Например: 89123456789</span>
+        </div>
+      </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+        <input type="submit" name="send_application" id='sent-form' value="Отправить" class="btn btn-success">
+      </div>
+</div>
+    </div>
+  </div>
+</div>
+
 <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37769280 = new Ya.Metrika({ id:37769280, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/37769280" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+<link rel="stylesheet" href="https://cdn.callbackkiller.com/widget/cbk.css">
+<script type="text/javascript" src="https://cdn.callbackkiller.com/widget/cbk.js?wcb_code=55502d1a87925714d4a8e0bb194557f2" charset="UTF-8" async></script>
 </body>
 </html>
