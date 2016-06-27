@@ -70,6 +70,7 @@ class Welcome extends CI_Controller {
     
     public function send_mail() {
                     $this->load->library('email');
+        $this -> email -> initialize();
 $this->input->post('Contact');
 $this->input->post('Vid');
 $this->input->post('Marka');
@@ -84,7 +85,7 @@ $this->email->to('admin@admin');
 
 
 $this->email->subject('Новая заявка');
-$this->email->message($this->input->post('Contact').'\r'.$this->input->post('Vid').'\r');	
+$this->email->message($this->input->post('Contact')."\n".$this->input->post('Vid'));	
 
 $this->email->send();
 
