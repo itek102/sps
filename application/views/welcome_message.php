@@ -81,20 +81,22 @@
     <div class="container">
     	<div class="row masonry" data-columns>
     	<div class="item">
+    	<div class="thumbnail">
 					<div class="caption">
 						<h3 class='beton-title'>Акции</h3>
 						<p><?=$sb?></p>
 					</div>
-				
+            </div>
 			</div>
     	<? foreach ($beton as $item):?>
 			<div class="item">
+                <div class="thumbnail">
 					<div class="caption">
 						<h3 class='beton-title'><?=$item['title']?></h3>
 						<p><?=$item['description']?></p>
 						<a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal">Заказать</a>
 					</div>
-				
+                </div>
 			</div>
 			<? endforeach;?>
     	</div>
@@ -159,6 +161,10 @@
 					<div class="caption">
 						<h3><a href="#"><?=$item['title']?></a></h3>
 						<p><?=$item['description']?></p>
+						<div class="container price-wrapper col-lg-9">
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 price-img"><img src="images/money.png" width="34" alt=""></div>
+						<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 price-st"><?=$item['price']?> р./час</div>
+						</div>
 						<a href="#" class="btn btn-success order-btn" data-toggle="modal" data-title='<?=$item['title']?>' data-target="#myModal2">Заказать</a>
 					</div>
 				</div>

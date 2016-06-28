@@ -143,3 +143,22 @@ div#cont-wrap {
     padding-bottom: 15px;
     background: #bdc3c7;
 }
+
+.price-st {
+    line-height: 34px;
+    font-size: 23px;
+    font-family: 'Jura', sans-serif;
+    padding: 0;
+}
+
+.price-wrapper {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 10px;
+}
+
+.price-img {
+    margin: 0;
+    padding: 0;
+    padding-right: 10px;
+}
