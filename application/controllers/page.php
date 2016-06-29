@@ -162,5 +162,42 @@ $this->load->view('admin/admin_bottom');
         $a = $this->db->update('beton',$img);
         echo $a;
     }
+    public function tehnika() {
+        if ($this->input->post('load_file'))
+        {
+            $description = $this->input->post('slogan');
+            $config['upload_path'] = './images/';
+            $config['allowed_types'] = 'jpg|png';
+            $config['max_size'] = '15360';
+            $config['encrypt_name'] = TRUE;
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            $temp_files = $_FILES;
+            $count = count ($_FILES['file']['name']);
+            for ($i=0; $i<=$count-1; $i++)
+                {
+                    $_FILES['file'] = array (
+                    'name'=>$temp_files['file']['name'][$i],
+                    'type'=>$temp_files['file']['type'][$i],
+                    'tmp_name'=>$temp_files['file']['tmp_name'][$i],
+                    'error'=>$temp_files['file']['error'][$i],
+                    'size'=>$temp_files['file']['size'][$i]);
+                    $this->upload->do_upload('file');
+                    $tmp_data = $this->upload->data();
+                    $files_data[$i]['data'] = $tmp_data['file_name'];
+                    $img = array(
+                        'img'         =>   $files_data[$i]['data'], 
+                        'description'        =>   $description,
+                        );
+                    $this->db->insert('gallery',$img);
+            }
+        } 
+        $d = $this->db->get('specteh');
+        $data['gallery'] = $d->result_array();
+        $this->load->view('admin/admin_top');
+        $this->load->view('admin/admin_st',$data);
+        $this->load->view('admin/admin_bottom'); 
+        
+    }
 	
 }
