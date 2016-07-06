@@ -32,7 +32,7 @@
 					<p>
         <textarea rows="5" class="form-control img-description" data-tehnika="<?=$item['id']?>" type="text" value=""><?=$item['description']?></textarea>
 					</p>
-					<div class="input-group">
+					<div class="input-group price-input">
   <input type="text" class="form-control" value="<?=$item['price']?>">
   <span class="input-group-addon">руб./час</span>
 </div>
