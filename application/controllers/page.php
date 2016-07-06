@@ -24,22 +24,31 @@ redirect(base_url().'page');
 }
 
 }
-
-$this->load->view('admin/au_user', $data);      
-}
+return 0;
+     
+} else {
+        return 1;
+    }
     }
 
 	public function index()
 	{
-        $this->login();
+  $auth =    $this->login();
+        if($auth == 0) {
+        $this->load->view('admin/au_user'); 
+            } else {
 $this->load->view('admin/admin_top');
 $this->load->view('admin/admin_view');
 $this->load->view('admin/admin_bottom');
+            }
 }
     
     	public function default_setting()
 	{
-        $this->login();
+        $auth =    $this->login();
+        if($auth == 0) {
+        $this->load->view('admin/au_user'); 
+            } else {
         if($this->input->post('save_default')) {
             $a = $this->input->post('adress');
             $p = $this->input->post('phone');
@@ -74,10 +83,15 @@ $this->load->view('admin/admin_bottom');
         $this->load->view('admin/admin_top');
         $this->load->view('admin/admin_default',$data);
         $this->load->view('admin/admin_bottom');
+        }
 }
     
     
     public function gallery() {
+          $auth =    $this->login();
+        if($auth == 0) {
+        $this->load->view('admin/au_user'); 
+            } else {
         if ($this->input->post('load_file'))
         {
             $description = $this->input->post('slogan');
@@ -112,6 +126,7 @@ $this->load->view('admin/admin_bottom');
         $this->load->view('admin/admin_top');
         $this->load->view('admin/admin_gallery',$data);
         $this->load->view('admin/admin_bottom'); 
+        }
         
     }
     
@@ -129,6 +144,10 @@ $this->load->view('admin/admin_bottom');
     }
 
     public function beton() {
+          $auth =    $this->login();
+        if($auth == 0) {
+        $this->load->view('admin/au_user'); 
+            } else {
         if ($this->input->post('load_file'))
         {
             $description = $this->input->post('description');
@@ -139,12 +158,12 @@ $this->load->view('admin/admin_bottom');
             );
             $this->db->insert('beton',$img);
         }
-        $this->login();
         $d = $this->db->get('beton');
         $data['gallery'] = $d->result_array();
         $this->load->view('admin/admin_top');
         $this->load->view('admin/admin_beton',$data);
         $this->load->view('admin/admin_bottom');
+        }
     }
     
     public function del_beton() {
@@ -163,6 +182,10 @@ $this->load->view('admin/admin_bottom');
         echo $a;
     }
     public function tehnika() {
+          $auth =    $this->login();
+        if($auth == 0) {
+        $this->load->view('admin/au_user'); 
+            } else {
         if ($this->input->post('load_file'))
         {
             $description = $this->input->post('slogan');
@@ -197,7 +220,7 @@ $this->load->view('admin/admin_bottom');
         $this->load->view('admin/admin_top');
         $this->load->view('admin/admin_st',$data);
         $this->load->view('admin/admin_bottom'); 
-        
+        }
     }
 	
 }
