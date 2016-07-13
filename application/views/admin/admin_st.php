@@ -16,9 +16,10 @@
     <input class="form-control input-lg" name="file[]" type="file" id="exampleInputFile"><br>
   
 					
-					<input class="form-control input-lg" name="slogan" type="text" value="" placeholder='Слоган изображения'><br>
-					
-					<input type="submit" name="load_file" class="btn btn-default" value="Загрузить файл">
+          <input class="form-control input-lg" name="slogan" type="text" value="" placeholder='Название техники'><br>
+					<input class="form-control input-lg" name="price" type="number" value="" placeholder='Цана за час'><br>
+					<textarea name="sttext" class='form-control' id="" cols="30" rows="10"></textarea>
+					<input type="submit" name="load_file" class="btn btn-default" value="Добавить технику">
 					
 					</form>
 				</div>
@@ -29,11 +30,12 @@
 				<div class="thumbnail">
 					<img src="<?=base_url();?>images/<?=$item['img']?>" alt="" class="img-responsive">
 					<div class="caption">
-					<p>
-        <textarea rows="5" class="form-control img-description" data-tehnika="<?=$item['id']?>" type="text" value=""><?=$item['description']?></textarea>
+					<input type='text' class="form-control img-title" data-tehnika="<?=$item['id']?>" value='<?=$item['title']?>'>
+          <p>
+        <textarea rows="5" class="form-control img-text" data-tehnika="<?=$item['id']?>" type="text" value=""><?=$item['description']?></textarea>
 					</p>
 					<div class="input-group">
-  <input type="text" class="form-control" value="<?=$item['price']?>">
+  <input type="text" class="form-control st-price" data-tehnika="<?=$item['id']?>" value="<?=$item['price']?>">
   <span class="input-group-addon">руб./час</span>
 </div>
 					<div class="btn-group btn-group-justified">
@@ -56,7 +58,7 @@ $(document).ready(function() {
     $('.del-img').click(function(){
         	var html = $.ajax({
 			type: "POST",
-			url: "del_img",
+			url: "del_st",
 			data: ({
             'id': $(this).data('img'), 
         }),
@@ -72,7 +74,9 @@ $(document).ready(function() {
 			url: "save_img",
 			data: ({
             'id': $(this).data('img'), 
-            'description': $('.img-description[data-img="'+id+'"]').val(),
+            'title': $('.img-title[data-tehnika="'+id+'"]').val(),
+            'text': $('.img-text[data-tehnika="'+id+'"]').val(),
+            'price': $('.img-prise[data-tehnika="'+id+'"]').val(),
         }),
             dataType: "json",
             async: false,

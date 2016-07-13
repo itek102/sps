@@ -189,6 +189,8 @@ $this->load->view('admin/admin_bottom');
         if ($this->input->post('load_file'))
         {
             $description = $this->input->post('slogan');
+            $price = $this->input->post('price');
+            $text = $this->input->post('sttext');
             $config['upload_path'] = './images/';
             $config['allowed_types'] = 'jpg|png';
             $config['max_size'] = '15360';
@@ -210,9 +212,11 @@ $this->load->view('admin/admin_bottom');
                     $files_data[$i]['data'] = $tmp_data['file_name'];
                     $img = array(
                         'img'         =>   $files_data[$i]['data'], 
-                        'description'        =>   $description,
+                        'title'        =>   $description,
+                        'description' => $text,
+                        'price' => $price
                         );
-                    $this->db->insert('gallery',$img);
+                    $this->db->insert('specteh',$img);
             }
         } 
         $d = $this->db->get('specteh');
@@ -222,5 +226,11 @@ $this->load->view('admin/admin_bottom');
         $this->load->view('admin/admin_bottom'); 
         }
     }
+
+        public function del_st() {
+    $id = $this->input->post('id');
+    $this->db->where('id',$id);
+    $a = $this->db->delete('specteh');
+}
 	
 }
