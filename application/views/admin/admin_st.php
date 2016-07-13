@@ -34,8 +34,13 @@
           <p>
         <textarea rows="5" class="form-control img-text" data-tehnika="<?=$item['id']?>" type="text" value=""><?=$item['description']?></textarea>
 					</p>
+<<<<<<< HEAD
 					<div class="input-group">
   <input type="text" class="form-control st-price" data-tehnika="<?=$item['id']?>" value="<?=$item['price']?>">
+=======
+					<div class="input-group price-input">
+  <input type="text" class="form-control" value="<?=$item['price']?>">
+>>>>>>> origin/master
   <span class="input-group-addon">руб./час</span>
 </div>
 					<div class="btn-group btn-group-justified">
